@@ -1,4 +1,5 @@
 import os
+import jsonpickle
 from telegram.ext import Updater, MessageHandler, Filters
 
 HEROKU_APPNAME = 'tg-what-is-my-request'
@@ -7,7 +8,7 @@ PORT = int(os.environ.get('PORT', '5000'))
 
 def echo(bot, update):
     #update.message.reply_text('Bot answer: ' + update.message.text)
-    update.message.reply_text(update.message)
+    update.message.reply_text(jsonpickle.encode(update.message))
 
 
 updater = Updater(TOKEN)
