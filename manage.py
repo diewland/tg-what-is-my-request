@@ -6,7 +6,8 @@ TOKEN = os.environ.get('TOKEN', 'TOKEN')
 PORT = int(os.environ.get('PORT', '5000'))
 
 def echo(bot, update):
-    update.message.reply_text('Bot answer: ' + update.message.text)
+    #update.message.reply_text('Bot answer: ' + update.message.text)
+    update.message.reply_text(update.message)
 
 
 updater = Updater(TOKEN)
